@@ -2,7 +2,7 @@
 import React from 'react'
 import { SignUp, useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
-function page() {
+function Page() {
     const { user, isLoaded, isSignedIn } = useUser();
     const router = useRouter();
     if(isSignedIn){
@@ -18,4 +18,4 @@ function page() {
 }
 
 
-export default page
+export default Page

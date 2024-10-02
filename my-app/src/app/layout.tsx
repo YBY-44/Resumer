@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import {Header} from "../components_/Headers";
+import { Outfit, Nunito } from 'next/font/google';
+import { ToastContainer } from "@/lib/Toast";
 import "./globals.css";
 import {
   ClerkProvider,
@@ -9,6 +11,10 @@ import {
   SignedOut,
   UserButton
 } from '@clerk/nextjs';
+const outfit = Nunito({
+  subsets: ['latin'], // Specify subsets (e.g., latin, cyrillic) if needed
+  weight: ["200", "300", "400",  "500",  "600", "700", "800", "900" ], // Specify the weights you want to include
+});
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -30,14 +36,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // {geistSans.variable} ${geistMono.variable}
   return (
     <html lang="en">
       <ClerkProvider>
+
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`$ antialiased ${outfit.className}`}
       >
         <Header/>
         {children}
+        <ToastContainer />
       </body>
       </ClerkProvider>
     </html>

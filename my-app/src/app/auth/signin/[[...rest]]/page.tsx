@@ -1,22 +1,23 @@
 'use client';
-import React from 'react'
-import {SignIn} from '@clerk/nextjs';
+import React, { useEffect } from 'react';
+import { SignIn } from '@clerk/nextjs';
 import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
-function page() {
-    const { user, isLoaded, isSignedIn } = useUser();
-    const router = useRouter();
-    if(isSignedIn){
-        router.push('/')
+function Page() {
+  const { user, isLoaded, isSignedIn } = useUser();
+  const router = useRouter();
+  useEffect(() => {
+    if (isSignedIn) {
+      router.push('/');
     }
+  });
+
   return (
     <div className='flex flex-col justify-center items-center'>
       <div className='h-[100px]'></div>
-      <SignIn/>
+      <SignIn />
     </div>
-
-  )
+  );
 }
 
-
-export default page
+export default Page;
