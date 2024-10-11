@@ -3,7 +3,6 @@ import { Input } from '@/components/ui/input';
 import { MyInput } from './MyInput';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
-import { ResumeInfoContext } from '@/context/ResumeInfoContext';
 import { FormDetail, DetailSchema } from '@/forms/userInfoForm';
 import { Loader } from 'lucide-react';
 import { zodResolver } from '@hookform/resolvers/zod';
