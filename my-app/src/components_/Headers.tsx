@@ -7,7 +7,7 @@ import { useUser } from '@clerk/nextjs';
 export const Header = () => {
   const { user, isLoaded, isSignedIn } = useUser();
   return (
-    <div id='np2' className='py-2 px-5 flex justify-between w-full items-center shadow-md bg-white'>
+    <div id='np2' className='py-2 px-5 flex justify-between w-full items-center shadow-md bg-white min-w-[600px]'>
       <Link href='/'>
         <Image
           src='/ppt.png'

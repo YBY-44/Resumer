@@ -80,7 +80,7 @@ function Page() {
       });
   }, []);
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 p-10 gap-10 w-full'>
+    <div className='min-w-[600px] grid grid-cols-1 xl:grid-cols-2 p-10 gap-10 w-full'>
       {loading ? (
         <div className='col-span-2 shadow-lg h-[85vh] p-14 border-t-[10px] border-primary rounded-md justify-center items-center flex-col flex gap-5'>
           <h2 className='animate-bounce'>We are fetching your resume...</h2>

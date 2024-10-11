@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import { useRouter, usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { ResumeOverview, ResumeInfo } from '@/lib/types';
-import { PersonalInfo } from '@/components_/PersonalInfo';
 import { PreViewInfo } from '@/components_/PreviewInfo';
 import { ResumeInfoDetail, FormTypePickDetail } from '@/forms/userInfoForm';
 import { Loader } from 'lucide-react';
@@ -84,7 +83,7 @@ function Page() {
       });
   }, []);
   return (
-    <div>
+    <div className='min-w-[600px]'>
       {loading ? (
         <div className='shadow-lg h-[85vh] p-14 rounded-md justify-center items-center flex-col flex gap-5 my-10 mx-10 md:mx-20 lg:mx-36 xl:mx-52'>
           <h2 className='animate-bounce'>We are fetching your resume...</h2>
@@ -101,7 +100,7 @@ function Page() {
               your unique URL with others if you wish to provide them access.
             </p>
 
-            <div className='flex justify-between px-44 my-10'>
+            <div className='flex justify-between px-44 my-10 gap-5'>
               <Button className='w-[90px]' onClick={HandleDownload}>
                 Download
               </Button>
